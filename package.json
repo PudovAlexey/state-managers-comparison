@@ -18,6 +18,7 @@
     "effector-react": "^23.2.1",
     "jotai": "^2.10.0",
     "jotai-immer": "^0.4.1",
+    "mobx-react-lite": "^4.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",

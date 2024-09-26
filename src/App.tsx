@@ -4,6 +4,7 @@ import { Box, styled } from '@mui/material'
 import {Profiler} from 'react';
 import { ContextChat } from './ContextChat/Chat';
 import { ReduxChat } from './ReduxChat/ReduxChat';
+import { MobxChat } from './mobXChat/MobxChat';
 
 export default function App() {
 
@@ -23,6 +24,9 @@ export default function App() {
       </ChatWrapper>
       <ChatWrapper>
         <ReduxChat/>
+      </ChatWrapper>
+      <ChatWrapper>
+        <MobxChat/>
       </ChatWrapper>
     </ChatBox>
 </Profiler>
