@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { JotaiChat } from './JotaiChat/JotaiChat'
+import { EffectorChat } from './EffectorChat/EffectorChat'
+import { Box, styled } from '@mui/material'
+import {Profiler} from 'react';
+import { ContextChat } from './ContextChat/Chat';
+import { ReduxChat } from './ReduxChat/ReduxChat';
 
-function App() {
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<Profiler id={'ChatProfiling'} onRender={(id, phase, actualDuration, baseDuration, startTime, commitTime) => {
+ console.log(actualDuration)
+}}>
+<ChatBox>
+      <ChatWrapper>
+        <JotaiChat />
+      </ChatWrapper>
+      <ChatWrapper  >
+        <EffectorChat />
+      </ChatWrapper>
+      <ChatWrapper>
+        <ContextChat/>
+      </ChatWrapper>
+      <ChatWrapper>
+        <ReduxChat/>
+      </ChatWrapper>
+    </ChatBox>
+</Profiler>
+  )
 }
 
-export default App;
+const ChatBox = styled(Box)({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+})
+
+const ChatWrapper = styled(Box)({
+  border: '1px solid gray',
+  padding: '12px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+})
