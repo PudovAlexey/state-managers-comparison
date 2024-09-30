@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { Message } from "../chatTypes";
 import { produce } from 'immer';
+import { mockInitialMessages } from "../mockMessages";
 
 type MessagesSchema = {
     messages: Message[]
@@ -13,7 +14,7 @@ type MessageActionsSchema = {
 }
 
 const initialState = {
-    messages: [],
+    messages: mockInitialMessages,
     input: '',
 }
 
@@ -21,11 +22,13 @@ const useZustandChatSlice = create<MessagesSchema & MessageActionsSchema>((set, 
 ...initialState,
 
 insertMessageMutation: (payload: Message) => {
-    set(produce((state) => state.messages.push(payload)))
+    const mes = get().messages;
+
+    set({messages: [...mes, payload]})
 },
 
 setInputValue: (payload: string) => {
-    set(produce((state) => state.input = payload))
+    set({input: payload})
 }
 }));
 

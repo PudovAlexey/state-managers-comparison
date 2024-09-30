@@ -17,7 +17,7 @@ function ZustandChat() {
     const setInput = useZustandChatSlice((state) => state.setInputValue);
     return (
         <Box>
-            <Typography>Jotai</Typography>
+            <Typography>Zustand</Typography>
             <Box>
                 <MessagesBox>
                     {messages.map(({id, message}) => (
