@@ -5,6 +5,7 @@ import {Profiler} from 'react';
 import { ContextChat } from './ContextChat/Chat';
 import { ReduxChat } from './ReduxChat/ReduxChat';
 import { MobxChat } from './mobXChat/MobxChat';
+import { ZustandChat } from './ZustandChat/ZustandChat';
 
 export default function App() {
 
@@ -27,6 +28,9 @@ export default function App() {
       </ChatWrapper>
       <ChatWrapper>
         <MobxChat/>
+      </ChatWrapper>
+      <ChatWrapper>
+        <ZustandChat/>
       </ChatWrapper>
     </ChatBox>
 </Profiler>
