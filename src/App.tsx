@@ -7,6 +7,7 @@ import { ReduxChat } from './ReduxChat/ReduxChat';
 import { MobxChat } from './mobXChat/MobxChat';
 import { ZustandChat } from './ZustandChat/ZustandChat';
 import { HookStateChat } from './HookStateChat/HookStateChat';
+import { RecoilChat } from './RecoilChat/RecoilChat';
 
 export default function App() {
 
@@ -35,6 +36,9 @@ export default function App() {
         </ChatWrapper>
         <ChatWrapper>
           <HookStateChat />
+        </ChatWrapper>
+        <ChatWrapper>
+          <RecoilChat />
         </ChatWrapper>
       </ChatBox>
     </Profiler>
