@@ -25,7 +25,7 @@ function ChatContextProvider({children}: PropsWithChildren) {
         setMessages((prev) => [...prev, {
             id: Date.now(),
             message: value
-        }])
+        }] as any)
     }, [])
 
     return (

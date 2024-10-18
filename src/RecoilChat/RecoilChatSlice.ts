@@ -1,6 +1,5 @@
 import { atom } from "recoil";
 import { mockInitialMessages } from "../mockMessages";
-import { Message } from "../chatTypes";
 
 const initialState = {
     inputValue: atom({
